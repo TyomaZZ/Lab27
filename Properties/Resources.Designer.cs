@@ -79,5 +79,14 @@ namespace WindowsFormsAppTest.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на string - це строкове значення? | 1 | 1.
+        /// </summary>
+        internal static string question1 {
+            get {
+                return ResourceManager.GetString("question1", resourceCulture);
+            }
+        }
     }
 }

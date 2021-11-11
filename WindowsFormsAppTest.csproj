@@ -53,6 +53,25 @@
     <Compile Include="ButtonTesting.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Que.cs" />
+    <Compile Include="QueBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QueBoxForm.Designer.cs">
+      <DependentUpon>QueBoxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QueForm.Designer.cs">
+      <DependentUpon>QueForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueVariableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QueVariableForm.Designer.cs">
+      <DependentUpon>QueVariableForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="StartForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +86,15 @@
     <Compile Include="TestingForm.Designer.cs">
       <DependentUpon>TestingForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="QueBoxForm.resx">
+      <DependentUpon>QueBoxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QueForm.resx">
+      <DependentUpon>QueForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QueVariableForm.resx">
+      <DependentUpon>QueVariableForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>
     </EmbeddedResource>

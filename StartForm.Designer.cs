@@ -30,27 +30,27 @@ namespace WindowsFormsAppTest
         private void InitializeComponent()
         {
             this.panelMain = new System.Windows.Forms.Panel();
-            this.nameOfBuildProgramOnWinForm = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.demoProgramName = new System.Windows.Forms.Label();
+            this.nameOfBuildProgramOnWinForm = new System.Windows.Forms.Label();
             this.countButton = new System.Windows.Forms.Button();
-            this.umbraText = new System.Windows.Forms.Label();
-            this.countTextBox = new System.Windows.Forms.TextBox();
             this.lvl4Text = new System.Windows.Forms.Label();
             this.lvl3Text = new System.Windows.Forms.Label();
-            this.vlv2Text = new System.Windows.Forms.Label();
-            this.lvl1Text = new System.Windows.Forms.Label();
             this.button4lvl = new System.Windows.Forms.Button();
             this.button3lvl = new System.Windows.Forms.Button();
             this.button2lvl = new System.Windows.Forms.Button();
-            this.welcomeText = new System.Windows.Forms.Label();
             this.button1lvl = new System.Windows.Forms.Button();
             this.panelBar = new System.Windows.Forms.Panel();
             this.titleName = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.umbraText = new System.Windows.Forms.Label();
+            this.countTextBox = new System.Windows.Forms.TextBox();
+            this.vlv2Text = new System.Windows.Forms.Label();
+            this.lvl1Text = new System.Windows.Forms.Label();
+            this.welcomeText = new System.Windows.Forms.Label();
             this.panelMain.SuspendLayout();
             this.panelBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -82,17 +82,38 @@ namespace WindowsFormsAppTest
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(530, 225);
-            this.panelMain.TabIndex = 0;
+            this.panelMain.TabIndex = 999;
             // 
-            // nameOfBuildProgramOnWinForm
+            // button3
             // 
-            this.nameOfBuildProgramOnWinForm.AutoSize = true;
-            this.nameOfBuildProgramOnWinForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nameOfBuildProgramOnWinForm.Location = new System.Drawing.Point(363, 71);
-            this.nameOfBuildProgramOnWinForm.Name = "nameOfBuildProgramOnWinForm";
-            this.nameOfBuildProgramOnWinForm.Size = new System.Drawing.Size(59, 31);
-            this.nameOfBuildProgramOnWinForm.TabIndex = 14;
-            this.nameOfBuildProgramOnWinForm.Text = "Old";
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button3.Enabled = false;
+            this.button3.Location = new System.Drawing.Point(475, 93);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(159, 26);
+            this.button3.TabIndex = 999;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Yellow;
+            this.button2.Enabled = false;
+            this.button2.Location = new System.Drawing.Point(440, 65);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(159, 26);
+            this.button2.TabIndex = 999;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.Enabled = false;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.Location = new System.Drawing.Point(470, 36);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(159, 26);
+            this.button1.TabIndex = 999;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // demoProgramName
             // 
@@ -102,8 +123,18 @@ namespace WindowsFormsAppTest
             this.demoProgramName.Location = new System.Drawing.Point(288, 105);
             this.demoProgramName.Name = "demoProgramName";
             this.demoProgramName.Size = new System.Drawing.Size(241, 68);
-            this.demoProgramName.TabIndex = 13;
+            this.demoProgramName.TabIndex = 999;
             this.demoProgramName.Text = "Testing";
+            // 
+            // nameOfBuildProgramOnWinForm
+            // 
+            this.nameOfBuildProgramOnWinForm.AutoSize = true;
+            this.nameOfBuildProgramOnWinForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nameOfBuildProgramOnWinForm.Location = new System.Drawing.Point(363, 71);
+            this.nameOfBuildProgramOnWinForm.Name = "nameOfBuildProgramOnWinForm";
+            this.nameOfBuildProgramOnWinForm.Size = new System.Drawing.Size(59, 31);
+            this.nameOfBuildProgramOnWinForm.TabIndex = 999;
+            this.nameOfBuildProgramOnWinForm.Text = "Old";
             // 
             // countButton
             // 
@@ -113,33 +144,10 @@ namespace WindowsFormsAppTest
             this.countButton.Location = new System.Drawing.Point(194, 185);
             this.countButton.Name = "countButton";
             this.countButton.Size = new System.Drawing.Size(72, 23);
-            this.countButton.TabIndex = 12;
+            this.countButton.TabIndex = 6;
             this.countButton.Text = "запитань";
             this.countButton.UseVisualStyleBackColor = false;
             this.countButton.Click += new System.EventHandler(this.StartTesting);
-            // 
-            // umbraText
-            // 
-            this.umbraText.AutoSize = true;
-            this.umbraText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.umbraText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.umbraText.Location = new System.Drawing.Point(25, 190);
-            this.umbraText.Name = "umbraText";
-            this.umbraText.Size = new System.Drawing.Size(121, 13);
-            this.umbraText.TabIndex = 11;
-            this.umbraText.Text = "На власний розсуд";
-            // 
-            // countTextBox
-            // 
-            this.countTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.countTextBox.Location = new System.Drawing.Point(152, 187);
-            this.countTextBox.Name = "countTextBox";
-            this.countTextBox.Size = new System.Drawing.Size(36, 20);
-            this.countTextBox.TabIndex = 10;
-            this.countTextBox.Text = "50";
-            this.countTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.countTextBox.TextChanged += new System.EventHandler(this.ChekNotEmptyAndBlock);
-            this.countTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BlockNotNumber);
             // 
             // lvl4Text
             // 
@@ -149,7 +157,7 @@ namespace WindowsFormsAppTest
             this.lvl4Text.Location = new System.Drawing.Point(40, 163);
             this.lvl4Text.Name = "lvl4Text";
             this.lvl4Text.Size = new System.Drawing.Size(84, 13);
-            this.lvl4Text.TabIndex = 9;
+            this.lvl4Text.TabIndex = 999;
             this.lvl4Text.Text = "Домінування";
             // 
             // lvl3Text
@@ -161,30 +169,8 @@ namespace WindowsFormsAppTest
             this.lvl3Text.Location = new System.Drawing.Point(44, 134);
             this.lvl3Text.Name = "lvl3Text";
             this.lvl3Text.Size = new System.Drawing.Size(71, 13);
-            this.lvl3Text.TabIndex = 8;
+            this.lvl3Text.TabIndex = 999;
             this.lvl3Text.Text = "Прагнення";
-            // 
-            // vlv2Text
-            // 
-            this.vlv2Text.AutoSize = true;
-            this.vlv2Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.vlv2Text.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.vlv2Text.Location = new System.Drawing.Point(41, 105);
-            this.vlv2Text.Name = "vlv2Text";
-            this.vlv2Text.Size = new System.Drawing.Size(80, 13);
-            this.vlv2Text.TabIndex = 7;
-            this.vlv2Text.Text = "Впевненість";
-            // 
-            // lvl1Text
-            // 
-            this.lvl1Text.AutoSize = true;
-            this.lvl1Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lvl1Text.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lvl1Text.Location = new System.Drawing.Point(32, 76);
-            this.lvl1Text.Name = "lvl1Text";
-            this.lvl1Text.Size = new System.Drawing.Size(95, 13);
-            this.lvl1Text.TabIndex = 6;
-            this.lvl1Text.Text = "Ознайомлення";
             // 
             // button4lvl
             // 
@@ -194,7 +180,7 @@ namespace WindowsFormsAppTest
             this.button4lvl.Location = new System.Drawing.Point(130, 158);
             this.button4lvl.Name = "button4lvl";
             this.button4lvl.Size = new System.Drawing.Size(136, 23);
-            this.button4lvl.TabIndex = 5;
+            this.button4lvl.TabIndex = 4;
             this.button4lvl.Text = "40 запитань";
             this.button4lvl.UseVisualStyleBackColor = false;
             this.button4lvl.Click += new System.EventHandler(this.StartTesting);
@@ -207,7 +193,7 @@ namespace WindowsFormsAppTest
             this.button3lvl.Location = new System.Drawing.Point(130, 129);
             this.button3lvl.Name = "button3lvl";
             this.button3lvl.Size = new System.Drawing.Size(136, 23);
-            this.button3lvl.TabIndex = 4;
+            this.button3lvl.TabIndex = 3;
             this.button3lvl.Text = "30 запитань";
             this.button3lvl.UseVisualStyleBackColor = false;
             this.button3lvl.Click += new System.EventHandler(this.StartTesting);
@@ -220,27 +206,18 @@ namespace WindowsFormsAppTest
             this.button2lvl.Location = new System.Drawing.Point(130, 100);
             this.button2lvl.Name = "button2lvl";
             this.button2lvl.Size = new System.Drawing.Size(136, 23);
-            this.button2lvl.TabIndex = 3;
+            this.button2lvl.TabIndex = 2;
             this.button2lvl.Text = "20 запитань";
             this.button2lvl.UseVisualStyleBackColor = false;
             this.button2lvl.Click += new System.EventHandler(this.StartTesting);
             // 
-            // welcomeText
-            // 
-            this.welcomeText.AutoSize = true;
-            this.welcomeText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.welcomeText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.welcomeText.Location = new System.Drawing.Point(7, 42);
-            this.welcomeText.Name = "welcomeText";
-            this.welcomeText.Size = new System.Drawing.Size(125, 13);
-            this.welcomeText.TabIndex = 2;
-            this.welcomeText.Text = "Кількість запитань:";
-            // 
             // button1lvl
             // 
             this.button1lvl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button1lvl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1lvl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1lvl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1lvl.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.button1lvl.Location = new System.Drawing.Point(130, 71);
             this.button1lvl.Name = "button1lvl";
             this.button1lvl.Size = new System.Drawing.Size(136, 23);
@@ -258,7 +235,7 @@ namespace WindowsFormsAppTest
             this.panelBar.Location = new System.Drawing.Point(0, 0);
             this.panelBar.Name = "panelBar";
             this.panelBar.Size = new System.Drawing.Size(530, 30);
-            this.panelBar.TabIndex = 0;
+            this.panelBar.TabIndex = 999;
             this.panelBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Drag_MouseDown);
             this.panelBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Drag_MouseMove);
             this.panelBar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Drag_MouseUp);
@@ -273,42 +250,24 @@ namespace WindowsFormsAppTest
             this.titleName.Name = "titleName";
             this.titleName.Padding = new System.Windows.Forms.Padding(10, 10, 0, 0);
             this.titleName.Size = new System.Drawing.Size(160, 23);
-            this.titleName.TabIndex = 1;
+            this.titleName.TabIndex = 999;
             this.titleName.Text = "Тестування: вибір опцій";
             this.titleName.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Drag_MouseDown);
             this.titleName.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Drag_MouseMove);
             this.titleName.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Drag_MouseUp);
             // 
-            // button1
+            // buttonClose
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.Enabled = false;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Location = new System.Drawing.Point(470, 36);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 26);
-            this.button1.TabIndex = 15;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Yellow;
-            this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(440, 65);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(159, 26);
-            this.button2.TabIndex = 16;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(475, 93);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(159, 26);
-            this.button3.TabIndex = 17;
-            this.button3.UseVisualStyleBackColor = false;
+            this.buttonClose.BackColor = System.Drawing.Color.Black;
+            this.buttonClose.BackgroundImage = global::WindowsFormsAppTest.Properties.Resources.iconmonstr_x_mark_2_48;
+            this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonClose.Location = new System.Drawing.Point(500, 0);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(30, 30);
+            this.buttonClose.TabIndex = 9999;
+            this.buttonClose.UseVisualStyleBackColor = false;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // pictureBox1
             // 
@@ -323,18 +282,61 @@ namespace WindowsFormsAppTest
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
-            // buttonClose
+            // umbraText
             // 
-            this.buttonClose.BackColor = System.Drawing.Color.Black;
-            this.buttonClose.BackgroundImage = global::WindowsFormsAppTest.Properties.Resources.iconmonstr_x_mark_2_48;
-            this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonClose.Location = new System.Drawing.Point(500, 0);
-            this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(30, 30);
-            this.buttonClose.TabIndex = 0;
-            this.buttonClose.UseVisualStyleBackColor = false;
-            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            this.umbraText.AutoSize = true;
+            this.umbraText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.umbraText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.umbraText.Location = new System.Drawing.Point(25, 190);
+            this.umbraText.Name = "umbraText";
+            this.umbraText.Size = new System.Drawing.Size(121, 13);
+            this.umbraText.TabIndex = 999;
+            this.umbraText.Text = "На власний розсуд";
+            // 
+            // countTextBox
+            // 
+            this.countTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.countTextBox.Location = new System.Drawing.Point(152, 187);
+            this.countTextBox.Name = "countTextBox";
+            this.countTextBox.Size = new System.Drawing.Size(36, 20);
+            this.countTextBox.TabIndex = 5;
+            this.countTextBox.Text = "50";
+            this.countTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.countTextBox.TextChanged += new System.EventHandler(this.ChekNotEmptyAndBlock);
+            this.countTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BlockNotNumber);
+            // 
+            // vlv2Text
+            // 
+            this.vlv2Text.AutoSize = true;
+            this.vlv2Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.vlv2Text.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.vlv2Text.Location = new System.Drawing.Point(41, 105);
+            this.vlv2Text.Name = "vlv2Text";
+            this.vlv2Text.Size = new System.Drawing.Size(80, 13);
+            this.vlv2Text.TabIndex = 999;
+            this.vlv2Text.Text = "Впевненість";
+            // 
+            // lvl1Text
+            // 
+            this.lvl1Text.AutoSize = true;
+            this.lvl1Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lvl1Text.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lvl1Text.Location = new System.Drawing.Point(32, 76);
+            this.lvl1Text.Name = "lvl1Text";
+            this.lvl1Text.Size = new System.Drawing.Size(95, 13);
+            this.lvl1Text.TabIndex = 999;
+            this.lvl1Text.Text = "Ознайомлення";
+            // 
+            // welcomeText
+            // 
+            this.welcomeText.AutoSize = true;
+            this.welcomeText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.welcomeText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.welcomeText.Location = new System.Drawing.Point(7, 42);
+            this.welcomeText.Name = "welcomeText";
+            this.welcomeText.Size = new System.Drawing.Size(125, 13);
+            this.welcomeText.TabIndex = 9999;
+            this.welcomeText.Text = "Кількість запитань:";
             // 
             // FormTesting
             // 

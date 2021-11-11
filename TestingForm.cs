@@ -14,21 +14,19 @@ namespace WindowsFormsAppTest
 {
     public partial class TestingForm : Form
     {
-        int maximumQue, points, completedQue, maximumPoints;
-        int centerForm, centerPanel;
+        public int maximumQue, points, completedQue, maximumPoints;
         bool drag = false;
+        readonly public Random rnd = new Random();
 
         public TestingForm(int que)
         {
+            Que.OnStart();
             InitializeComponent();
             labelTitle.Text = $"Тестування: {que} запитань";
-            centerForm = Width;
-            centerPanel = panelBar.Height;
             maximumQue = que;
             toolStripStatusQueProgress.Text = $"Бали: 0/{maximumQue} ;";
             toolStripProgressBarStatus.Maximum = maximumQue;
             toolStripProgressBarStatus.Step = 1;
-            //toolStripStatusPointUser.Text = $"Правильні відповіді: 0/0";
             for (int i = 1; i < que + 1; i++)
             {
                 ButtonTesting btn = new ButtonTesting(i);
@@ -37,18 +35,40 @@ namespace WindowsFormsAppTest
                     btn.Width = 110;
                 else
                     btn.Width = 114;
+
                 btn.Height = 35;
                 btn.BackColor = Color.LightGray;
-                btn.Text = "Питання \n № " + btn.number;
+                btn.Text = "Питання № " + btn.number;
                 btn.Font = new Font(btn.Font, FontStyle.Bold);
                 btn.Click += ButtonQue;
                 flowLayoutPanelQue.Controls.Add(btn);
+                
+            }
+            foreach (ButtonTesting btns in flowLayoutPanelQue.Controls)
+            {
+                if (Que.listQue.Count == 0)
+                {
+                    Que.OnStart();
+                }
+                int k = rnd.Next(Que.listQue.Count);
+                btns.queFull = Que.listQue[k];
+                Que.listQue.RemoveAt(k);
             }
         }
 
         private void ButtonQue(object sender, EventArgs e)
         {
-            MessageBox.Show($"Питання № {((ButtonTesting)sender).number}");
+            if (((ButtonTesting)sender).type == 1)
+                new QueForm(this, (ButtonTesting)sender).ShowDialog();
+            if (((ButtonTesting)sender).type == 2)
+                new QueBoxForm(this, (ButtonTesting)sender).ShowDialog();
+            if (((ButtonTesting)sender).type == 3)
+                new QueVariableForm(this, (ButtonTesting)sender).ShowDialog();
+
+            labelTitle.Text = $"Тестування: {maximumQue} запитань";
+            toolStripStatusPointUser.Text = $"Правильні відповіді: {completedQue}/{maximumQue}";
+            toolStripStatusQueProgress.Text = $"Бали: {points}/{maximumPoints} ;";
+            ((ButtonTesting)sender).Text += $"\n{((ButtonTesting)sender).answer}";
         }
 
         private void CloseApplication(object sender, FormClosingEventArgs e)
@@ -64,7 +84,7 @@ namespace WindowsFormsAppTest
         private void Drag_MouseMove(object sender, MouseEventArgs e)
         {
             if (drag)
-                this.Location = new Point(MousePosition.X - (centerForm / 2), MousePosition.Y - (centerPanel / 2));
+                this.Location = new Point(MousePosition.X - (Width / 2), MousePosition.Y - (panelBar.Height / 2));
         }
 
         private void Drag_MouseUp(object sender, MouseEventArgs e)
