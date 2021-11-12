@@ -12,47 +12,39 @@ namespace WindowsFormsAppTest
 {
     public partial class QueBoxForm : Form
     {
-        TestingForm Father;
-        ButtonTesting button;
+        readonly TestingForm OwnerForm;
+        readonly ButtonTesting OwnerButton;
 
         public QueBoxForm(TestingForm Father, ButtonTesting sender)
         {
             InitializeComponent();
-            this.Father = Father;
+            OwnerForm = Father;
             labelQueNumber.Text = $"Питання № {sender.number}:";
             Father.labelTitle.Text = "Тестування: Дайте відповідь на запитання";
-            button = sender;
+            OwnerButton = sender;
             quest.Text = sender.queFull.Split('|')[0].Trim();
         }
 
         private void AcceptButtonConfirm(object sender, EventArgs e)
         {
-            if (AnswerBox.Text.ToLower().Equals(button.answer.ToLower()))
+            if (AnswerBox.Text.ToLower().Equals(OwnerButton.answer.ToLower()))
             {
-                Father.points += 3;
-                Father.maximumPoints += 3;
-                Father.completedQue++;
-                Father.toolStripProgressBarStatus.Value++;
-                button.BackColor = Color.DarkGreen;
-                button.Enabled = false;
                 // virno
+                OwnerForm.Truth(3, OwnerButton, AnswerBox.Text);
                 Close();
             }
             else
             {
-                Father.maximumPoints += 3;
-                Father.toolStripProgressBarStatus.Value++;
-                button.BackColor = Color.DarkRed;
-                button.Enabled = false;
                 //nevirno
+                OwnerForm.Wrong(3, OwnerButton);
                 Close();
             }
         }
 
         private void QueBoxForm_Load(object sender, EventArgs e)
         {
-            Left = Father.Left;
-            Top = Father.Top + 30;
+            Left = OwnerForm.Left;
+            Top = OwnerForm.Top + 30;
         }
     }
 }

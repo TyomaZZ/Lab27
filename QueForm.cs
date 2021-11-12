@@ -12,16 +12,16 @@ namespace WindowsFormsAppTest
 {
     public partial class QueForm : Form
     {
-        TestingForm Father;
-        ButtonTesting button;
-        public QueForm(TestingForm Father, ButtonTesting sender)
+        readonly TestingForm OwnerForm;
+        readonly ButtonTesting buttonOwner;
+        public QueForm(TestingForm Father, ButtonTesting buttonQuestion)
         {
             InitializeComponent();
-            this.Father = Father;
-            labelQueNumber.Text = $"Питання № {sender.number}:";
-            Father.labelTitle.Text = "Тестування: Дайте відповідь на запитання";
-            button = sender;
-                if (sender.isTrue)
+            this.OwnerForm = Father;
+            labelQueNumber.Text = $"Питання № {buttonQuestion.number}:";
+            OwnerForm.labelTitle.Text = "Тестування: Дайте відповідь на запитання";
+            buttonOwner = buttonQuestion;
+                if (buttonQuestion.isTrue)
                 {
                     btnYes.Click += btnYesClick;
                     btnNo.Click += btnNoClick;
@@ -31,35 +31,27 @@ namespace WindowsFormsAppTest
                     btnNo.Click += btnYesClick;
                     btnYes.Click += btnNoClick;
                 }
-            quest.Text = sender.queFull.Split('|')[0].Trim();
+            quest.Text = buttonQuestion.queFull.Split('|')[0].Trim();
         }
 
         private void btnYesClick(object sender, EventArgs e)
         {
-            Father.points++;
-            Father.maximumPoints++;
-            Father.completedQue++;
-            Father.toolStripProgressBarStatus.Value++;
-            button.BackColor = Color.DarkGreen;
-            button.Enabled = false;
             // virno
+            OwnerForm.Truth(1, buttonOwner, ((Button)sender).Text);
             Close();
         }
 
         private void btnNoClick(object sender, EventArgs e)
         {
-            Father.maximumPoints++;
-            Father.toolStripProgressBarStatus.Value++;
-            button.BackColor = Color.DarkRed;
-            button.Enabled = false;
             //nevirno
+            OwnerForm.Wrong(1, buttonOwner);
             Close();
         }
 
         private void QueForm_Load(object sender, EventArgs e)
         {
-            Left = Father.Left;
-            Top = Father.Top + 30;
+            Left = OwnerForm.Left;
+            Top = OwnerForm.Top + 30;
         }
     }
 }

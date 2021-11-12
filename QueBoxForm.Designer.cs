@@ -71,13 +71,15 @@ namespace WindowsFormsAppTest
             // 
             // buttonAccept
             // 
+            this.buttonAccept.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(106)))), ((int)(((byte)(247)))));
+            this.buttonAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAccept.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonAccept.Location = new System.Drawing.Point(426, 336);
             this.buttonAccept.Name = "buttonAccept";
             this.buttonAccept.Size = new System.Drawing.Size(135, 37);
             this.buttonAccept.TabIndex = 4;
             this.buttonAccept.Text = "Готово";
-            this.buttonAccept.UseVisualStyleBackColor = true;
+            this.buttonAccept.UseVisualStyleBackColor = false;
             this.buttonAccept.Click += new System.EventHandler(this.AcceptButtonConfirm);
             // 
             // answerText

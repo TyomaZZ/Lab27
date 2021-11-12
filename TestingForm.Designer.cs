@@ -64,7 +64,7 @@ namespace WindowsFormsAppTest
             this.flowLayoutPanelQue.Location = new System.Drawing.Point(0, 30);
             this.flowLayoutPanelQue.Name = "flowLayoutPanelQue";
             this.flowLayoutPanelQue.Size = new System.Drawing.Size(600, 398);
-            this.flowLayoutPanelQue.TabIndex = 1;
+            this.flowLayoutPanelQue.TabIndex = 0;
             // 
             // statusStripBar
             // 
@@ -77,12 +77,13 @@ namespace WindowsFormsAppTest
             this.statusStripBar.Name = "statusStripBar";
             this.statusStripBar.Size = new System.Drawing.Size(600, 22);
             this.statusStripBar.SizingGrip = false;
-            this.statusStripBar.TabIndex = 2;
+            this.statusStripBar.TabIndex = 999;
             this.statusStripBar.Text = "statusStrip1";
             // 
             // toolStripStatusPointUser
             // 
             this.toolStripStatusPointUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(34)))), ((int)(((byte)(151)))));
+            this.toolStripStatusPointUser.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripStatusPointUser.ForeColor = System.Drawing.Color.White;
             this.toolStripStatusPointUser.Name = "toolStripStatusPointUser";
             this.toolStripStatusPointUser.Size = new System.Drawing.Size(63, 17);
@@ -111,7 +112,7 @@ namespace WindowsFormsAppTest
             this.panelBar.Location = new System.Drawing.Point(0, 0);
             this.panelBar.Name = "panelBar";
             this.panelBar.Size = new System.Drawing.Size(600, 30);
-            this.panelBar.TabIndex = 0;
+            this.panelBar.TabIndex = 999;
             this.panelBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Drag_MouseDown);
             this.panelBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Drag_MouseMove);
             this.panelBar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Drag_MouseUp);
@@ -124,7 +125,7 @@ namespace WindowsFormsAppTest
             this.labelTitle.Location = new System.Drawing.Point(12, 9);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(76, 13);
-            this.labelTitle.TabIndex = 1;
+            this.labelTitle.TabIndex = 999;
             this.labelTitle.Text = "Тестування";
             this.labelTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Drag_MouseDown);
             this.labelTitle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Drag_MouseMove);
@@ -171,12 +172,12 @@ namespace WindowsFormsAppTest
 
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Button buttonClose;
-        private System.Windows.Forms.StatusStrip statusStripBar;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusPointUser;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusQueProgress;
         public System.Windows.Forms.Panel panelBar;
         public System.Windows.Forms.Label labelTitle;
         public System.Windows.Forms.ToolStripProgressBar toolStripProgressBarStatus;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanelQue;
+        public System.Windows.Forms.StatusStrip statusStripBar;
     }
 }

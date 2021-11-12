@@ -8,12 +8,13 @@ using WindowsFormsAppTest.Properties;
 
 namespace WindowsFormsAppTest
 {
-    public class Que
+    public abstract class Que
     {
         static public List<string> listQue = new List<string>();
 
         static public void OnStart()
         {
+            //type 1
             listQue.Add("string - це строкове значення? | 1 | 1");
             listQue.Add("int - 64 бітне значення? | 1 | 0");
             listQue.Add("Декрементація числа виконується за допомогою оператора ++ | 1 | 0"); 
@@ -28,7 +29,7 @@ namespace WindowsFormsAppTest
             listQue.Add("Чи працюватиме цей код: \"const int a = 5\"   | 1 | 1");
             listQue.Add("Без явного вказування клас зазвичай публічний? | 1 | 0");
             listQue.Add("string та String - одне і теж саме? | 1 | 0");
-            //
+            //type 2
             listQue.Add("Оператор виділення пам'яті | 2 | new");
             listQue.Add("Порожнє значення змінної називається... | 2 | Null");
             listQue.Add("Що виведе на екран код:\n        int a = -5;\n        Console.WriteLine(~a); | 2 | 4");
@@ -43,21 +44,22 @@ namespace WindowsFormsAppTest
             listQue.Add("Метод закриття форми називається... | 2 | Close");
             listQue.Add("Оператор += додає значення до попереднього... | 2 | значення");
             listQue.Add("Конструктор із знаком ~ перед назвою це... | 2 | Деструктор");
-            //
-            Que.listQue.Add("hi | 3 | otvet | otvet | wrong | wrong | wrong");
-            Que.listQue.Add(" | 3 | otvet | otvet | wrong | wrong | wrong");
-            Que.listQue.Add(" | 3 | otvet | otvet | wrong | wrong | wrong");
-            Que.listQue.Add(" | 3 | otvet | otvet | wrong | wrong | wrong");
-            Que.listQue.Add(" | 3 | otvet | otvet | wrong | wrong | wrong");
-            Que.listQue.Add(" | 3 | otvet | otvet | wrong | wrong | wrong");
-            Que.listQue.Add(" | 3 | otvet | otvet | wrong | wrong | wrong");
-            Que.listQue.Add(" | 3 | otvet | otvet | wrong | wrong | wrong");
-            Que.listQue.Add(" | 3 | otvet | otvet | wrong | wrong | wrong");
-            Que.listQue.Add(" | 3 | otvet | otvet | wrong | wrong | wrong");
-            Que.listQue.Add(" | 3 | otvet | otvet | wrong | wrong | wrong");
-            Que.listQue.Add(" | 3 | otvet | otvet | wrong | wrong | wrong");
-            Que.listQue.Add(" | 3 | otvet | otvet | wrong | wrong | wrong");
+            //type 3
+            listQue.Add("Що робить оператор \"%\"? | 3 | Повертає залишок від ділення | Повертає залишок від ділення | Нічого | Показує відсоток значення | Аналог true/false");
+            listQue.Add("Як виконати інкрементацію? | 3 | ++ | ++ | -- | +- | !+");
+            listQue.Add("Як знайти квадратний корінь з числа х?  | 3 | Math.Sqrt(x) | Math.Sqrt(x) | Sqrt(x) | Sqrt.x | x.Sqrt");
+            listQue.Add("Оператор \"НЕ\" виглядає так: | 3 | ! | ! | != | == | \"NOT\"");
+            listQue.Add("Оператор \"І\" виглядає так: | 3 | Усі перечислені | & | and | & & | Усі перечислені");
+            listQue.Add("Для чого потрібні оператори розгалуження? | 3 | Для розгалуження програми | Для розгалуження програми | Для оптимізації | Для виставлення умов користувачу | Для подвоєння коду");
+            listQue.Add("Що поверне функція Termin після виконання. Код:\n  int Termin()\n      {int a = 1;\n      int b = 3;\n      if (a != 5) \n        return a + b;\n      else \n        return 0;\n      } | 3 | 0 | 0 | 4 | 5 | 3");
+            listQue.Add("Що таке масив? | 3 | Набір однотипних даних які розташовуються в пам'яті послідовно один за одним | Набір однотипних даних які розташовуються в пам'яті послідовно один за одним | Змінна | Набір данних типу int | Набір текстових значень");
+            listQue.Add("Для чого потрібні цикли? | 3 | Для багатократного виконання коду | Для багатократного виконання коду | Для багаторазового запуску програм | Для виконання коду без помилок | Для запуску ракет");
+            listQue.Add("Ви любите котів? | 3 | Так | Так | Так | Так | Так");
+            listQue.Add("Які бувають цикли? | 3 | for, while, do-while, foreach | for, while, do-while, foreach | Великі та маленькі | ref, int, static, loop | Цикл Азімова, Цикл Фібоначі, подвійний Цикл");
+            listQue.Add("Що таке перевантаження методу? | 3 | Використання одного імені для різних методів | Використання одного імені для різних методів | Передача занадто великих даних в функцію | Передача занадто великої змінної в return | Неправове використання методів");
+            listQue.Add("Що робить try-catch? | 3 | Працює з виключеннями | Працює з виключеннями | Намагається виконати код примусово, без компіляції | Працює з файлами | Працює з базою данних");
+            listQue.Add("В чому різниця між break та continue? | 3 | Continue пропускає ітерацію, break виходить з циклу | Continue пропускає ітерацію, break виходить з циклу | Break працює лише в циклах | Continue працює лише в циклах | немаэ відмінностей"); //
+            
         }
-
     }
 }

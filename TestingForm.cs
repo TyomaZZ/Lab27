@@ -14,35 +14,42 @@ namespace WindowsFormsAppTest
 {
     public partial class TestingForm : Form
     {
-        public int maximumQue, points, completedQue, maximumPoints;
+        public int maximumQue, points, completedQue, maximumPoints, correctQue;
         bool drag = false;
         readonly public Random rnd = new Random();
 
         public TestingForm(int que)
         {
-            Que.OnStart();
             InitializeComponent();
             labelTitle.Text = $"Тестування: {que} запитань";
             maximumQue = que;
             toolStripStatusQueProgress.Text = $"Бали: 0/{maximumQue} ;";
             toolStripProgressBarStatus.Maximum = maximumQue;
             toolStripProgressBarStatus.Step = 1;
-            for (int i = 1; i < que + 1; i++)
+            GenerateQuestion(que);
+        }
+
+        private void GenerateQuestion(int queCount)
+        {
+            flowLayoutPanelQue.Controls.Clear();
+            for (int i = 1; i < queCount + 1; i++)
             {
-                ButtonTesting btn = new ButtonTesting(i);
-                btn.Margin = new Padding(5, 5, 0, 0);
-                if (que > 45)
+                ButtonTesting btn = new ButtonTesting(i)
+                {
+                    Margin = new Padding(5, 5, 0, 0),
+                    Height = 110,
+                    BackColor = Color.FromArgb(130, 100, 250),
+                    Font = new Font(Font.FontFamily, 8, FontStyle.Bold),
+                    ForeColor = Color.Black,
+                    TabIndex = i
+                };
+                if (queCount > 15)
                     btn.Width = 110;
                 else
                     btn.Width = 114;
-
-                btn.Height = 35;
-                btn.BackColor = Color.LightGray;
                 btn.Text = "Питання № " + btn.number;
-                btn.Font = new Font(btn.Font, FontStyle.Bold);
                 btn.Click += ButtonQue;
                 flowLayoutPanelQue.Controls.Add(btn);
-                
             }
             foreach (ButtonTesting btns in flowLayoutPanelQue.Controls)
             {
@@ -68,7 +75,45 @@ namespace WindowsFormsAppTest
             labelTitle.Text = $"Тестування: {maximumQue} запитань";
             toolStripStatusPointUser.Text = $"Правильні відповіді: {completedQue}/{maximumQue}";
             toolStripStatusQueProgress.Text = $"Бали: {points}/{maximumPoints} ;";
-            ((ButtonTesting)sender).Text += $"\n{((ButtonTesting)sender).answer}";
+            if (toolStripProgressBarStatus.Value == toolStripProgressBarStatus.Maximum)
+            {
+                new Result(this, maximumQue, correctQue, points, maximumPoints).ShowDialog();
+            }
+            if (flowLayoutPanelQue.Controls.GetChildIndex((Control)sender) < flowLayoutPanelQue.Controls.Count - 1)
+            {
+                    flowLayoutPanelQue.Controls[(flowLayoutPanelQue.Controls.GetChildIndex((Control)sender) + 1)].Focus();
+            }
+        }
+
+        public void Truth(int count, ButtonTesting button, string answer)
+        {
+            points += count;
+            maximumPoints += count;
+            completedQue++;
+            correctQue++;
+            toolStripProgressBarStatus.Value++;
+            button.BackColor = Color.DarkGreen;
+            button.Enabled = false;
+            button.Text += $"\n\nВи відповіли: \n{answer}";
+        }
+
+        public void Wrong(int count, ButtonTesting button)
+        {
+            maximumPoints += count;
+            toolStripProgressBarStatus.Value++;
+            button.BackColor = Color.DarkRed;
+            button.Enabled = false;
+            if (button.type == 1)
+            {
+                if (button.isTrue)
+                    button.Text += $"\n\nПравильна відповідь: \nТак";
+                else
+                    button.Text += $"\n\nПравильна відповідь: \nНі";
+            }
+            else
+            {
+                button.Text += $"\nПравильна відповідь: \n{button.answer}";
+            }
         }
 
         private void CloseApplication(object sender, FormClosingEventArgs e)

@@ -12,66 +12,52 @@ namespace WindowsFormsAppTest
 {
     public partial class QueVariableForm : Form
     {
-        TestingForm Father;
-        ButtonTesting button;
-        List<string> list;
+        readonly TestingForm OwnerForm;
+        readonly ButtonTesting OwnerButton;
+        List<string> answerList;
 
         public QueVariableForm(TestingForm Father, ButtonTesting sender)
         {
             InitializeComponent();
-            this.Father = Father;
+            OwnerForm = Father;
             labelQueNumber.Text = $"Питання № {sender.number}:";
             Father.labelTitle.Text = "Тестування: Дайте відповідь на запитання";
-            button = sender;
+            OwnerButton = sender;
             quest.Text = sender.queFull.Split('|')[0].Trim();
-            list = new List<string>();
+            answerList = new List<string>();
             int a = 0;
-            foreach (string str in button.queFull.Split('|'))
+            foreach (string str in OwnerButton.queFull.Split('|'))
             {
                 if (a > 2)
-                    list.Add(str);
+                    answerList.Add(str.Trim());
                 a++;
             }
-            int b = Father.rnd.Next(list.Count);
-            Var1.Text = list[b];
-            list.RemoveAt(b);
-            b = Father.rnd.Next(list.Count);
-            Var2.Text = list[b];
-            list.RemoveAt(b);
-            b = Father.rnd.Next(list.Count);
-            Var3.Text =list[b];
-            list.RemoveAt(b);
-            b = Father.rnd.Next(list.Count);
-            Var4.Text =list[b];
-            list.RemoveAt(b);
+            foreach (Button btn in panelWithButton.Controls)
+            {
+                int b = Father.rnd.Next(answerList.Count);
+                btn.Text = answerList[b];
+                answerList.RemoveAt(b);
+            }
         }
 
         private void QueVariableForm_Load(object sender, EventArgs e)
         {
-            Left = Father.Left;
-            Top = Father.Top + 30;
+            Left = OwnerForm.Left;
+            Top = OwnerForm.Top + 30;
         }
 
         private void ConfirmButtonClick(object sender, EventArgs e)
         {
-            if (((Button)sender).Text.Equals(button.answer))
+            if (((Button)sender).Text.Equals(OwnerButton.answer))
             {
-                Father.points += 2;
-                Father.maximumPoints += 2;
-                Father.completedQue++;
-                Father.toolStripProgressBarStatus.Value++;
-                button.BackColor = Color.DarkGreen;
-                button.Enabled = false;
                 // virno
+                OwnerForm.Truth(2, OwnerButton, ((Button)sender).Text);
                 Close();
             }
             else
             {
-                Father.maximumPoints += 2;
-                Father.toolStripProgressBarStatus.Value++;
-                button.BackColor = Color.DarkRed;
-                button.Enabled = false;
                 //nevirno
+                OwnerForm.Wrong(2, OwnerButton);
                 Close();
             }
         }

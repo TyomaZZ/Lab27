@@ -13,7 +13,8 @@ namespace WindowsFormsAppTest
     public partial class FormTesting : Form
     {
         bool drag = false;
-        int maxQue = 1000; //Зафіксований максимум 4100 запитань, при запиті в 5000 запитань(900 запитань не завантажилось), унікальність в 39 запитань, по 13 кожного типу
+        int maxQue = 41;
+        //Зафіксований максимум 4100 запитань, при запиті в 5000 запитань(900 запитань не завантажилось/кнопки не прогрузилися), унікальність в 41 запитання
 
         public FormTesting()
         {
@@ -39,6 +40,7 @@ namespace WindowsFormsAppTest
         private void buttonClose_Click(object sender, EventArgs e)
         {
             Close();
+            Application.Exit();
         }
 
         private void StartTesting(object sender, EventArgs e)

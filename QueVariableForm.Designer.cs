@@ -36,7 +36,9 @@ namespace WindowsFormsAppTest
             this.Var3 = new System.Windows.Forms.Button();
             this.Var2 = new System.Windows.Forms.Button();
             this.Var4 = new System.Windows.Forms.Button();
+            this.panelWithButton = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
+            this.panelWithButton.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelQueNumber
@@ -55,7 +57,7 @@ namespace WindowsFormsAppTest
             this.flowLayoutPanel1.Controls.Add(this.quest);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(15, 29);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(573, 278);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(573, 262);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // quest
@@ -72,43 +74,62 @@ namespace WindowsFormsAppTest
             // 
             // Var1
             // 
-            this.Var1.Location = new System.Drawing.Point(33, 313);
+            this.Var1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(106)))), ((int)(((byte)(247)))));
+            this.Var1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Var1.Location = new System.Drawing.Point(3, 3);
             this.Var1.Name = "Var1";
-            this.Var1.Size = new System.Drawing.Size(237, 30);
+            this.Var1.Size = new System.Drawing.Size(276, 40);
             this.Var1.TabIndex = 5;
             this.Var1.Text = "Варіант 1";
-            this.Var1.UseVisualStyleBackColor = true;
+            this.Var1.UseVisualStyleBackColor = false;
             this.Var1.Click += new System.EventHandler(this.ConfirmButtonClick);
             // 
             // Var3
             // 
-            this.Var3.Location = new System.Drawing.Point(33, 349);
+            this.Var3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(106)))), ((int)(((byte)(247)))));
+            this.Var3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Var3.Location = new System.Drawing.Point(3, 46);
             this.Var3.Name = "Var3";
-            this.Var3.Size = new System.Drawing.Size(237, 30);
+            this.Var3.Size = new System.Drawing.Size(276, 40);
             this.Var3.TabIndex = 6;
             this.Var3.Text = "Варіант 3";
-            this.Var3.UseVisualStyleBackColor = true;
+            this.Var3.UseVisualStyleBackColor = false;
             this.Var3.Click += new System.EventHandler(this.ConfirmButtonClick);
             // 
             // Var2
             // 
-            this.Var2.Location = new System.Drawing.Point(328, 313);
+            this.Var2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(106)))), ((int)(((byte)(247)))));
+            this.Var2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Var2.Location = new System.Drawing.Point(294, 3);
             this.Var2.Name = "Var2";
-            this.Var2.Size = new System.Drawing.Size(237, 30);
+            this.Var2.Size = new System.Drawing.Size(276, 40);
             this.Var2.TabIndex = 7;
             this.Var2.Text = "Варіант 2";
-            this.Var2.UseVisualStyleBackColor = true;
+            this.Var2.UseVisualStyleBackColor = false;
             this.Var2.Click += new System.EventHandler(this.ConfirmButtonClick);
             // 
             // Var4
             // 
-            this.Var4.Location = new System.Drawing.Point(328, 349);
+            this.Var4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(106)))), ((int)(((byte)(247)))));
+            this.Var4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Var4.Location = new System.Drawing.Point(294, 46);
             this.Var4.Name = "Var4";
-            this.Var4.Size = new System.Drawing.Size(237, 30);
+            this.Var4.Size = new System.Drawing.Size(276, 40);
             this.Var4.TabIndex = 8;
             this.Var4.Text = "Варіант 4";
-            this.Var4.UseVisualStyleBackColor = true;
+            this.Var4.UseVisualStyleBackColor = false;
             this.Var4.Click += new System.EventHandler(this.ConfirmButtonClick);
+            // 
+            // panelWithButton
+            // 
+            this.panelWithButton.Controls.Add(this.Var1);
+            this.panelWithButton.Controls.Add(this.Var4);
+            this.panelWithButton.Controls.Add(this.Var3);
+            this.panelWithButton.Controls.Add(this.Var2);
+            this.panelWithButton.Location = new System.Drawing.Point(15, 297);
+            this.panelWithButton.Name = "panelWithButton";
+            this.panelWithButton.Size = new System.Drawing.Size(573, 89);
+            this.panelWithButton.TabIndex = 9;
             // 
             // QueVariableForm
             // 
@@ -116,10 +137,7 @@ namespace WindowsFormsAppTest
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(34)))), ((int)(((byte)(200)))));
             this.ClientSize = new System.Drawing.Size(600, 398);
-            this.Controls.Add(this.Var4);
-            this.Controls.Add(this.Var2);
-            this.Controls.Add(this.Var3);
-            this.Controls.Add(this.Var1);
+            this.Controls.Add(this.panelWithButton);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.labelQueNumber);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -129,6 +147,7 @@ namespace WindowsFormsAppTest
             this.Load += new System.EventHandler(this.QueVariableForm_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
+            this.panelWithButton.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,5 +162,6 @@ namespace WindowsFormsAppTest
         private System.Windows.Forms.Button Var3;
         private System.Windows.Forms.Button Var2;
         private System.Windows.Forms.Button Var4;
+        private System.Windows.Forms.Panel panelWithButton;
     }
 }
